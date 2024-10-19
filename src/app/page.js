@@ -16,18 +16,47 @@ const Page = () => {
 
   const minute = Math.floor(count / 60);
 
+  const hour = Math.floor(minute / 60);
+
   const roundUp = (count) => {
     if (count <= 9) return `0${count}`;
     return count;
   };
-
+  const minuteRoundUp = (count) => {
+    const roundedMinute = count - hour * 60;
+    if (count >= 60) {
+      if (roundedMinute <= 9) return `0${roundedMinute}`;
+      return roundedMinute;
+    } else {
+      if (count <= 9) return `0${count}`;
+      return count;
+    }
+  };
   return (
-    <h1>
-      <div className="time">
-        <div>{roundUp(minute)}</div>:<div>{roundUp(second)}</div>
+    <div className="body">
+      <div className="time-container">
+        <div className="box-header">
+          Hour
+          <div className="time">{roundUp(hour)}</div>
+        </div>
+        <div className="box-header">
+          Minute
+          <div className="time">{minuteRoundUp(minute)}</div>
+        </div>
+        <div className="box-header">
+          Second
+          <div className="time">{roundUp(second)}</div>
+        </div>
       </div>
-      <button onClick={() => setCount((prev) => prev + 15)}>add 15 sec</button>
-    </h1>
+      <div className="buttons">
+        <button className="btn" onClick={() => setCount((prev) => prev + 150)}>
+          Add 150 sec
+        </button>
+        <button className="btn" onClick={() => setCount((prev) => prev - 150)}>
+          Minus 150 sec
+        </button>
+      </div>
+    </div>
   );
 };
 
