@@ -49,11 +49,11 @@ const Page = () => {
         </div>
       </div>
       <div className="buttons">
-        <button className="btn" onClick={() => setCount((prev) => prev + 150)}>
-          Add 150 sec
+        <button className="btn" onClick={() => setCount((prev) => prev + 60)}>
+          Add 60 sec
         </button>
-        <button className="btn" onClick={() => setCount((prev) => prev - 150)}>
-          Minus 150 sec
+        <button className="btn" onClick={() => setCount((prev) => prev - 60)}>
+          Minus 60 sec
         </button>
       </div>
     </div>
