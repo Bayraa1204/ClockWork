@@ -32,7 +32,6 @@
   height: 50px;
   background-color: palevioletred;
   border-radius: 20px;
-  border: none;
 }
 .btn:hover {
   cursor: pointer;
